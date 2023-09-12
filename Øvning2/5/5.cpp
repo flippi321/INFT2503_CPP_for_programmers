@@ -11,6 +11,6 @@ int main(int argc, char *argv[])
     /* Three ways to get number's value */
     std::cout << "1: " << number << std::endl;
     std::cout << "2: " << *p1 << std::endl;
-    std::cout << "3: " << *&p2 << std::endl;
+    std::cout << "3: " << p2 << std::endl;
     return 0;
 }
