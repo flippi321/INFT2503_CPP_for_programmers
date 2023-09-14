@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 
     // Issue 1: Buffer Overflow - Input can exceed the buffer size allocated for 'text'.
     // Issue 2: cin must be intialized using std::cin
-    cin >> text;
+    std::cin >> text;
 
     // Issue 3: Infinite Loop - In the absence of 'e' in the input, the loop will never terminate.
     while (*pointer != search_for)
