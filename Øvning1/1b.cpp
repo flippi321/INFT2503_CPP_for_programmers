@@ -2,7 +2,7 @@
 #include <limits>
 #include <fstream>
 
-void read_temperatures(double temperatures[], int length, int& bTen, int& aTwenty);
+void read_temperatures(double* temperatures, int length, int* bTen, int* aTwenty);
 
 int main(int argc, char* argv[])
 {
@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 
     std::cout << "Program that takes user input of " << length << " days' temperatures." << std::endl;
 
-    read_temperatures(temperatures, length, bTen, aTwenty);
+    read_temperatures(temperatures, length, &bTen, &aTwenty);
 
     std::cout << std::endl << "Temperature range | Amount of days"  << std::endl << std::endl 
     << "\t < 10 \t  | \t" << bTen << std::endl << std::endl 
@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-void read_temperatures(double temperatures[], int length, int& bTen, int& aTwenty) {
+void read_temperatures(double* temperatures, int length, int* bTen, int* aTwenty) {
     std::ifstream inFile("temperatures.txt");
     
     if (!inFile) {
@@ -33,9 +33,9 @@ void read_temperatures(double temperatures[], int length, int& bTen, int& aTwent
     
     for (int i = 0; i < length && inFile >> temperatures[i]; ++i) {
         if (temperatures[i] < 10.0) {
-            bTen++;
+            *bTen++;
         } else if (temperatures[i] > 20.0) {
-            aTwenty++;
+            *aTwenty++;
         }
     }
 
