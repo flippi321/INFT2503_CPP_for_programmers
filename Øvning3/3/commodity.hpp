@@ -7,9 +7,9 @@ class Commodity {
     Commodity(string name_, int id_, double price_);           
     string get_name() const;
     int get_id() const;
-    double get_price() const;
+    double get_price(double quantity = 1.0) const;
     void set_price(double newPrice);
-    double get_price_with_sales_tax() const;
+    double get_price_with_sales_tax(double quantity = 1.0) const;
   private: 
     string name;
     int id;
@@ -28,14 +28,14 @@ int Commodity::get_id() const {
 
 }
 
-double Commodity::get_price() const {
-    return price;
+double Commodity::get_price(double quantity) const {
+    return price*quantity;
 }
 
 void Commodity::set_price(double newPrice) {
     price = newPrice;
 }
 
-double Commodity::get_price_with_sales_tax() const {
-    return price*1.25;
+double Commodity::get_price_with_sales_tax(double quantity) const {
+    return (price*quantity)*1.25;
 }
