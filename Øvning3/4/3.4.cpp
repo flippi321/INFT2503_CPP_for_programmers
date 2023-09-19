@@ -19,10 +19,10 @@ int main() {
     string sentence = word1 + " " +  word2 + " " +  word3 + ".";
     
     // Task C
-    cout << "Word 1 lenght: " << word1.length();
-    cout << "Word 2 lenght: " << word2.length();
-    cout << "Word 3 lenght: " << word3.length();
-    cout << "Sentence lenght: " << sentence.length();
+    cout << "Word 1 lenght: " << word1.length() << endl;
+    cout << "Word 2 lenght: " << word2.length() << endl;
+    cout << "Word 3 lenght: " << word3.length() << endl;
+    cout << "Sentence lenght: " << sentence.length() << endl;
 
     // Task D
     string sentence2 = sentence;
@@ -35,17 +35,17 @@ int main() {
 
     // Task G
     if (sentence.find("hallo") != std::string::npos) {
-        cout << "The sentence contains 'hallo'";
+        cout << "The sentence contains 'hallo'" << endl;
     } else {
-        cout << "The sentence does NOT contain 'hallo'";
+        cout << "The sentence does NOT contain 'hallo'" << endl;
     }
 
     // Task H
     int count = 0;
 
-    for (int i = 0; i < sentence.size(); i+=2)
+    for (int i = 0; i < sentence.size(); i++)
         if (sentence[i] == 'e' && sentence[i+1] == 'r') count++;
 
-    cout << "'er' appears " << count << " times in the sentence";
+    cout << "'er' appears " << count << " times in the sentence" << endl;
 
 }
